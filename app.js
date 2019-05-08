@@ -24,7 +24,11 @@ function checkExist(accOnline, acc) {
     }
     return false;
 }
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 io.on('connection', function (socket) {
 
     console.log("Co nguoi ket noi" + socket.id);
