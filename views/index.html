@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        let ds = [
+            {name: 'hau0', password: 'abc1', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau0', password: 'abc1', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau1', password: 'abc1', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau2', password: 'abc1', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau3', password: 'abc1', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau4', password: 'abc2', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau4', password: 'abc2', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau5', password: 'abc3', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau7', password: 'abc3', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau8', password: 'abc8', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau9', password: 'abc9', email: '15130052@st.hcmuaf.edu.vn'},
+            {name: 'hau9', password: 'abc9', email: '15130052@st.hcmuaf.edu.vn'}
+        ];
+
+        function removeUnique(arrayObject) {
+            let dsObjectNew = [];
+            arrayObject.forEach(function (value) {
+                if (!contains(dsObjectNew, value)) {
+                    dsObjectNew.push(value);
+                }
+            });
+            return dsObjectNew;
+
+        }
+
+        function contains(array, obj) {
+            for (let i = 0; i < array.length; i++) {
+                var object = array[i];
+                if (object.name === obj.name && object.password === obj.password && object.email === obj.email) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+        console.log(removeUnique(ds));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
